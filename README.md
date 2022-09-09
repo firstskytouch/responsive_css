@@ -9,7 +9,7 @@ Task to implement responsive UI using CSS
 
 **TASK**
 
-In this homework, you should create a web page and provide styles for specific screen resolutions as shown in the pictures:
+You should create a web page and provide styles for specific screen resolutions as shown in the pictures:
 - examples/desktop.png - shows how the page should look like on the large screen
 - examples/tablet.png - shows how the page should look like on the tablet
 - examples/mobile.png - shows how the page should look like on the phone screen
