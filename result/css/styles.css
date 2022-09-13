@@ -4,16 +4,16 @@ body {
   margin: 0;
   padding: 0;
   font-family: roboto;
-  font-size: calc(9px + 3 * ((100vw - 320px) / 680));
+  font-size: calc(9px + 3 * (50vw / 340));
   color: white;
   background-color: #0b192f;
 }
 
 .main_container {
   margin: 0 auto;
-  width: 40vw;
+  width: 50vw;
   display: grid;
-  grid-template-rows: 40px auto 70px;
+  grid-template-rows: 54px auto 60px;
   grid-template-areas:
     "nav_header"
     "main_content"
@@ -41,7 +41,7 @@ a {
 h2 {
   margin: 0;
   padding-top: 0;
-  font-size: 1.9em;
+  font-size: 2em;
   font-weight: 200;
 }
 
@@ -64,7 +64,7 @@ p {
 
 .nav_header {
   grid-area: nav_header;
-  height: 40px;
+  height: 100%;
   background-color: #024161;
   display: flex;
   align-items: center;
@@ -133,7 +133,7 @@ div.heading {
 }
 
 .article_with_image {
-  height: 150px;
+  /* height: 150px; */
   position: relative;
   display: flex;
   align-items: center;
@@ -141,9 +141,22 @@ div.heading {
   cursor: pointer;
 }
 
-.article_with_image > img {
+.article_with_image > .img-wrap {
   align-self: stretch;
-  width: 50%;
+  width: calc(50% - 4px);
+  min-width: calc(50% - 4px);
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.article_with_image > .img-wrap > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .article_with_image > img:hover {
@@ -157,28 +170,48 @@ div.heading {
 .article_date {
   text-align: center;
   margin: 0;
-  width: 20px;
   font-size: 1.5em;
   position: absolute;
   opacity: 20%;
-  right: 20px;
   top: 5px;
+  font-weight: 100;
+}
+
+.article_without_image .article_date,
+.article_with_image:nth-of-type(2n + 1) .article_date {
+  right: 5px;
+  left: auto;
+}
+
+.article_with_image:nth-of-type(2n) .article_date {
+  left: 5px;
+  right: auto;
+}
+
+.article {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.article.left {
+  margin-right: 30px;
+}
+
+.article.right {
+  margin-left: 30px;
+}
+
+.article_day {
+  font-size: 1.5em;
+}
+
+.article_month {
+  font-size: 0.9em;
 }
 
 .article_with_image:nth-of-type(2n) {
   flex-direction: row-reverse;
   text-align: right;
-}
-
-.article_with_image:nth-of-type(2n) .article_date {
-  text-align: center;
-  margin: 0;
-  width: 20px;
-  font-size: 1.5em;
-  position: absolute;
-  opacity: 20%;
-  left: 5px;
-  top: 5px;
 }
 
 .blog_news {
@@ -229,25 +262,28 @@ footer {
   grid-area: page_footer;
   background-color: #024161;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   text-align: left;
+  height: 100%;
 }
 
 footer p {
-  font-size: 0.7em;
+  font-size: 0.5em;
   font-weight: 100;
   padding: 0 20px;
   line-height: 0.7;
+  opacity: 50%;
 }
 
 @media (max-width: 1400px) {
   body {
-    font-size: calc(7px + 3 * ((100vw - 320px) / 680));
+    font-size: calc(7px + 3 * (768px / 340));
   }
 
   .main_container {
-    width: calc(100vw / 3);
+    width: 768px;
+    min-height: 100vh;
   }
 
   a.nav_link {
