@@ -120,8 +120,8 @@ div.heading {
 .text {
   position: absolute;
   width: 60%;
-  bottom: 1vw;
-  left: 2vw;
+  bottom: 1.5em;
+  left: 1.5em;
 }
 
 .articles {
@@ -187,14 +187,6 @@ div.heading {
 .article {
   height: 100%;
   box-sizing: border-box;
-}
-
-.article.left {
-  margin-right: 30px;
-}
-
-.article.right {
-  margin-left: 30px;
 }
 
 .article_day {
@@ -334,7 +326,7 @@ footer p {
   }
 
   h2 {
-    padding-right: 50px;
+    padding-right: 1em;
     font-size: 3em;
   }
 
@@ -344,7 +336,9 @@ footer p {
   }
 
   .text {
-    width: 85%;
+    width: 80%;
+    bottom: 2.5em;
+    left: 2.5em;
   }
 
   .article_with_image {
@@ -367,7 +361,7 @@ footer p {
   .article_with_image > div.article {
     position: relative;
     margin: 0;
-    padding-right: 40px;
+    padding-right: 3em;
   }
 
   .article_with_image > img {
@@ -380,14 +374,9 @@ footer p {
   }
 
   .blog_text,
-  .article_with_image > div.article {
-    padding-left: 2.5em;
-    padding-bottom: 2.5em;
-  }
-
+  .article_with_image > div.article,
   .article_without_image > div.article {
-    padding-left: 2.5em;
-    padding-bottom: 2.5em;
+    padding: 2.5em;
   }
 
   .article_with_image:nth-of-type(2n + 1) .article_date,
@@ -446,7 +435,7 @@ footer p {
   }
 
   .logo {
-    font-size: 5em;
+    font-size: 3.5em;
   }
 
   .heading h2 {
@@ -455,8 +444,7 @@ footer p {
 
   .articles p,
   .blog_news p {
-    font-size: 2.5em;
-    padding-bottom: 1.5em;
+    font-size: 1em;
   }
 
   .articles h2,
@@ -464,13 +452,8 @@ footer p {
     font-size: 4em;
   }
 
-  .article_date {
-    font-size: 5.5em;
-    right: 65px;
-  }
-
+  .article_with_image:nth-of-type(2n + 1) .article_date,
   .article_with_image:nth-of-type(2n) .article_date {
-    font-size: 5.5em;
-    right: 65px;
+    font-size: 2.5em;
   }
 }
